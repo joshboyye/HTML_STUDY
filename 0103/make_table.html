@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<header>
+
+</header>
+
+<style>
+    table{
+        width: 70%; /* 표의 너비*/
+        boorder: 1px solid #222; 
+        border-collapse: collapse;
+    } thead{
+        background: rgb(66, 54, 20);
+    }th, td{
+        border: 1px solid #ccc;
+        padding: 5px; 
+        fornt-size: 0.8em;
+    }
+
+</style>
+    
+<body>
+    
+    <table border="1">
+        <tr>
+            <th> 이름 </th>
+            <td></td>
+            <th>연락처</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>주소</th>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <th>자기소개</th>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+
+
+<table border="1">
+    <caption> <!-- 캡션은 중앙정렬됨-->
+        <strong> Modern Browser</strong>
+        <p> 국내에서 자주 사용하는 모던 브라우저</p>
+    </caption>
+    <tr>
+        <th>브라우저</th>
+        <th> 제조업체</th>
+        <th> 다운로드</th>
+    </tr>
+    <tr> <td>chrome</td><td>google</td></tr>
+    <tr> <td>firefox</td><td>mozila</td></tr>
+    <tr> <td>edge</td> <td>microsoft</td></tr>
+
+</table>
+
+
+<table border="1">
+    <figcaption> <!-- 중앙정렬 되지 않음-->
+        <p> 국내에서 자주 사용하는 모던 브라우저</p>
+    </figcaption>
+    <tr>
+        <th>브라우저</th>
+        <th> 제조업체</th>
+        <th> 다운로드</th>
+    </tr>
+    <tr> <td>chrome</td><td>google</td></tr>
+    <tr> <td>firefox</td><td>mozila</td></tr>
+    <tr> <td>edge</td> <td>microsoft</td></tr>
+
+</table>
+
+<table border="1">
+    <caption>제주특별자치도 학교현황(2015.4.1 기준)</caption>
+    <thead>
+        <tr>
+            <th> 구분</th>
+            <th> 학교수</th>
+            <th> 학급수</th>
+            <th> 학생수</th>
+            <th> 교원수</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th> 유치원</th>
+            <td> 117</td>
+            <td>225 </td>
+            <td> 5,547</td>
+            <td> 474</td>
+        </tr>
+        <tr> 117</tr>
+        <tr> 3245</tr>
+        <tr> 33,23</tr>
+        <tr> 21433</tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th> 합계</th>
+            <td> 304</td>
+            <td> 3,437</td>
+            <td> 86,954</td>
+            <td> 6,111</td>
+        </tr>
+    </tfoot>
+</table>
+<section>
+<table border =1>
+    <caption> colgroup 연습</caption>
+    <colgroup>
+        <col>
+        <col span="2" style="background-color: blue;">
+        <col style="background-color: yellow;">
+    </colgroup>
+    <tr>
+        <td>아</td>
+        <td>하</td>
+        <td>이</td>
+        <td>노</td>
+    </tr>
+    <tr>
+        <td>노</td>
+        <td>노</td>
+        <td>누</td>
+        <td>누</td>
+    </tr>
+</table>
+</section>
+
+</body>
+
+</html>

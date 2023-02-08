@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Varela+Round&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    {#    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"#}
+    {#          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">#}
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
+    <title>gazuaaa</title>
+</head>
+<body>
+
+
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="user_profile">
+            <p class="users_id">{{ username }}님 어서오세요!</p>
+
+        </div>
+    </div>
+    <div class="tabs is-centered">
+
+
+        {% if status %}
+            <ul>
+                <li class="is-active"><a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li><a class="nav-link" href="/mypage">my page</a></li>
+                <button class="button is-primary" onclick="sign_out()">log out</button>
+                <button class="button is-primary" onclick="live_btn()"> 인기 검색 종목 </button>
+                </li>
+            </ul>
+
+        {% endif %}
+    </div>
+</section>
+
+
+<div class="stock_block">
+    <button class="button is-danger" onclick="open_box()">KOSPI: {{ kospi }} </button>
+</div>
+{#매수할 박스 #}
+
+    <div id="buying_kos_pi"class="buy_ko_spi_box">
+      <div class="field">
+        <label class="label">종목</label>
+        <div class="control">
+          <input class="input" id="input_stock" type="text" placeholder="매수하실 종목은?">
+        </div>
+      </div>
+
+
+  <div class="field">
+    <label class="label">희망가</label>
+    <div class="control">
+      <input class="input" id="input_price" type="text" placeholder="희망하는 가격은?">
+    </div>
+  </div>
+
+  <button class="button is-danger" onclick="buying_kos()">매수</button>
+        <button class="button is-black" onclick="close_box()">닫기</button>
+</div>
+
+
+<div class="card-boxs" id="kos_pi_box">
+</div>
+
+<div class="stock_block">
+    <button class="button is-link" onclick="opend_box2()">KOSDAQ: {{ kosdaq }}</button>
+</div>
+{#코스닥 매수 박스#}
+ <div id="buying_kos_daq"class="buy_ko_daq_box">
+      <div class="field">
+        <label class="label">종목</label>
+        <div class="control">
+          <input class="input" id="input_stock2" type="text" placeholder="매수하실 종목은?">
+        </div>
+      </div>
+
+
+  <div class="field">
+    <label class="label">희망가</label>
+    <div class="control">
+      <input class="input" id="input_price2" type="text" placeholder="희망하는 가격은?">
+    </div>
+  </div>
+
+  <button class="button is-danger">매수</button>
+        <button class="button is-black" onclick="close_box2()">닫기</button>
+</div>
+
+<div class="card-boxs" id="kos_daq_box">
+</div>
+
+<form> 
+    <td> 태슬라 </td>
+    <td> 100,300</td>
+    <td></td>
+</form>
+
+<table class="table" id="live_box">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">인기 검색 종목</th>
+        <th scope="col">시가</th>
+        <th scope="col">전일 대비</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>삼성전자</td>
+        <td>69,500</td>
+        <td>▼600</td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>카카오</td>
+        <td>92,100</td>
+        <td>🔺500</td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td>SK 하이닉스</td>
+        <td>118,000</td>
+        <td>🔺1,500</td>
+    </tr>
+    </tbody>
+</table>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>hanghae99</strong> by <a href="https://jgthms.com">6기 8조</a> mini project
+            <a href="https://github.com/Gazuaaaaaa/Gazuaaaaa">GITHUP</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+    </div>
+</footer>
+</body>
+</html>
